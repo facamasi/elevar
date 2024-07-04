@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalles del Producto</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+
+  <!-- Your custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="bg-dark">
+    <div class="container">
+      <h1 class="text-light">Tienda de Camisetas</h1>
+      <nav>
+        <ul class="nav">
+          <li class="nav-item"><a class="nav-link text-light" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link text-light" href="index.html#products">Productos</a></li>
+          <li class="nav-item"><a class="nav-link text-light" href="index.html#contact">Contacto</a></li>
+          <li class="nav-item"><a class="nav-link text-light" href="index.html#login">Login</a></li>
+          <li class="nav-item"><a class="nav-link text-light" href="index.html#cart">Carrito</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <br><br>
+
+  <main class="container" style="margin-bottom: 100px;">
+    <div class="row">
+      <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+        <img id="productImage" src="" alt="Producto" class="img-fluid">
+      </div>
+
+      <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+        <h2 id="productName"></h2>
+        <p id="productDescription"></p>
+        <br>
+        <div class="row align-items-center" style="height:250px; position: relative;">
+          <div class="col-6 d-flex justify-content-center align-items-left text-left" style="flex-direction: column;">
+            <h3 id="productPrice"></h3>
+            <br>
+            <div class="form-group">
+              <label for="quantity">Cantidad:</label>
+              <input type="number" id="quantity" class="form-control" value="1" min="1">
+            </div>
+            <div class="form-group">
+              <label for="size">Talla:</label>
+              <select id="size" class="form-control">
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+              </select>
+            </div>
+            <br>
+            <button class="btn btn-primary" onclick="addToCart()">Añadir al Carrito</button>
+          </div>
+          <div class="col-6 justify-content-center align-items-center" style="position: relative;">
+            <img id="qrImage" src="" alt="Código QR" width="150" height="170"
+              style="position: absolute; top: -100px; right: 15px;">
+          </div>
+        </div>
+      </div>    
+
+      <div class="col-lg-4">
+        
+        <section id="cart" class="py-5 bg-light">
+          <div id="cartItems">
+            <h3>Productos en el Carrito</h3>
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Subtotal</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td colspan="3" class="text-right"><strong>Total:</strong></td>
+                    <td colspan="2"><strong>$0.00</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <button id="resetCartBtn" class="btn btn-danger btn-block mt-3 d-none" onclick="resetCart()">Reiniciar
+            Carrito</button>
+          <br>
+          <button type="button" class="btn btn-success" onclick="sendCartViaWhatsApp()">Enviar por WhatsApp</button>
+        </section>
+      </div>      
+    </div>
+  </main>
+
+  <!-- Ionicons -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <!-- Your custom script -->
+  <script src="script.js"></script>
+
+  <script>
+    // Obtener parámetros de la URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const productName = urlParams.get('name');
+    const productPrice = parseFloat(urlParams.get('price'));
+    const productDescription = urlParams.get('description');
+    const productImage = urlParams.get('image');
+    const qrImage = urlParams.get('qr');
+
+    // Actualizar los elementos HTML con la información del producto
+    document.getElementById('productName').textContent = productName;
+    document.getElementById('productPrice').textContent = `$${productPrice}`;
+    document.getElementById('productDescription').textContent = productDescription;
+    document.getElementById('productImage').src = productImage;
+
+    // Actualizar el código QR con la URL correcta
+    if (qrImage) {
+      document.getElementById('qrImage').src = qrImage;
+    }
+
+    // Comprobar si la imagen se carga correctamente
+    document.getElementById('qrImage').addEventListener('error', function () {
+      console.error('Error cargando la imagen del código QR. Verifique la ruta de la imagen.');
+    });
+
+    // Cargar el carrito desde localStorage
+    function loadCart() {
+      const cartFromStorage = localStorage.getItem('cart');
+      if (cartFromStorage) {
+        return JSON.parse(cartFromStorage);
+      }
+      return [];
+    }
+
+    // Guardar el carrito en localStorage
+    function saveCart(cart) {
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
+    // Actualizar la visualización del carrito
+    function displayCart() {
+      const cart = loadCart();
+      const cartItems = document.querySelector('#cartItems tbody');
+      if (cartItems) {
+        cartItems.innerHTML = cart.map((product, index) => `
+      <tr>
+        <td>
+          <img src="${product.image}" alt="${product.name}" class="img-fluid" style="max-width: 50px;">
+          ${product.name} (${product.size})
+        </td>
+        <td>$${product.price.toFixed(2)}</td>
+        <td>
+          <input type="number" class="form-control" value="${product.quantity}" min="1" onchange="updateQuantity(${index}, this.value)">
+        </td>
+        <td>$${(product.price * product.quantity).toFixed(2)}</td>
+        <td>
+          <button class="btn btn-danger btn-sm" onclick="removeFromCart(${index})">Eliminar</button>
+        </td>
+      </tr>
+    `).join('');
+        const totalRow = document.createElement('tr');
+        totalRow.innerHTML = `
+      <td colspan="3" class="text-right"><strong>Total:</strong></td>
+      <td colspan="2"><strong>$${calculateTotal().toFixed(2)}</strong></td>
+    `;
+        cartItems.appendChild(totalRow);
+        document.getElementById('resetCartBtn').classList.toggle('d-none', cart.length === 0);
+      }
+    }
+
+    // Añadir al carrito
+    function addToCart() {
+      const cart = loadCart();
+      const quantity = parseInt(document.getElementById('quantity').value);
+      const size = document.getElementById('size').value;
+      const existingItem = cart.find(item => item.name === productName && item.size === size);
+      if (existingItem) {
+        existingItem.quantity += quantity;
+      } else {
+        cart.push({ name: productName, price: productPrice, description: productDescription, image: productImage, quantity: quantity, size: size });
+      }
+      saveCart(cart);
+      displayCart();
+      alert(`Se añadió "${productName}" (${size}) al carrito.`);
+    }
+
+    // Actualizar cantidad de producto
+    function updateQuantity(index, quantity) {
+      const cart = loadCart();
+      if (quantity < 1) {
+        cart.splice(index, 1);
+      } else {
+        cart[index].quantity = parseInt(quantity);
+      }
+      saveCart(cart);
+      displayCart();
+    }
+
+    // Eliminar del carrito
+    function removeFromCart(index) {
+      const cart = loadCart();
+      cart.splice(index, 1);
+      saveCart(cart);
+      displayCart();
+    }
+
+    // Calcular total del carrito
+    function calculateTotal() {
+      const cart = loadCart();
+      return cart.reduce((total, product) => total + (product.price * product.quantity), 0);
+    }
+
+    // Reiniciar carrito
+    function resetCart() {
+      saveCart([]);
+      displayCart();
+    }
+
+    // Inicializar
+    document.addEventListener('DOMContentLoaded', displayCart);
+
+    // Formatear el carrito para WhatsApp
+    function formatCartForWhatsApp() {
+      const cart = loadCart();
+      return cart.map((product, index) => `${index + 1}. ${product.name} (${product.size}) - Cantidad: ${product.quantity}, Precio: $${product.price.toFixed(2)}, Subtotal: $${(product.price * product.quantity).toFixed(2)}`).join('\n');
+    }
+
+    function sendCartViaWhatsApp() {
+      const total = calculateTotal().toFixed(2);
+      const message = `¡Hola! Aquí tienes mi lista de compras:\n\n${formatCartForWhatsApp()}\nTotal: $${total}\n\n¡Gracias!`;
+
+      // Crear un elemento temporal de textarea para copiar el mensaje al portapapeles
+      const tempTextArea = document.createElement('textarea');
+      tempTextArea.value = message;
+      tempTextArea.style.position = 'fixed';  // Evitar que se desplace la página
+      tempTextArea.style.opacity = 0;         // Hacer invisible el textarea
+      document.body.appendChild(tempTextArea);
+      tempTextArea.select();
+      document.execCommand('copy');            // Copiar el contenido al portapapeles
+      document.body.removeChild(tempTextArea); // Eliminar el textarea temporal
+
+      // Alerta después de copiar al portapapeles
+      alert(`¡MENSAJE COPIADO AL PORTAPAPELES! Por favor, si el pedido no carga en el chat, pega este mensaje:\n\n${message}`);
+
+      // Reemplaza '1234567890' con el número de WhatsApp al que deseas enviar el mensaje
+      const phoneNumber = '573155540282';
+      const url = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
+
+      // Abrir en una nueva ventana o redireccionar a la URL de WhatsApp
+      window.open(url, '_blank');
+      resetCart();
+    }
+
+
+  </script>
+
+</body>
+
+</html>

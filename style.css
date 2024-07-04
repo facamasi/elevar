@@ -1,0 +1,549 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+:root {
+  --primary: #ec994b;
+  --white: #ffffff;
+  --bg: #f5f5f5;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Montserrat", sans-serif;
+  scroll-behavior: smooth;
+}
+
+@media (min-width: 1440px) {
+  html {
+    zoom: 1.5;
+  }
+}
+
+@media (min-width: 2560px) {
+  html {
+    zoom: 1.7;
+  }
+}
+
+@media (min-width: 3860px) {
+  html {
+    zoom: 2.5;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 1.3rem;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background: #797979;
+  transition: all 0.5s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #222224;
+}
+
+::-webkit-scrollbar-track {
+  background: #f9f9f9;
+}
+
+body {
+  font-size: 1.6rem;
+  background: var(--bg);
+
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  /* Cambié la altura del header */
+  background-color: #343a40;
+  display: flex;
+  justify-content: center;
+  /* Centrar horizontalmente */
+  align-items: center;
+  /* Centrar verticalmente */
+  z-index: 1000;
+  padding: 0;
+  /* Asegúrate de no tener padding extra */
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  /* Asegúrate que el contenedor ocupe todo el ancho del header */
+}
+
+header h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  /* Centrar el texto */
+}
+
+header nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+header nav ul li {
+  margin-right: 5px;
+  padding: 0px;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+  font-size: 10px;
+
+}
+
+header nav ul li a:hover {
+  color: #ccc;
+}
+
+.container {
+  max-width: 100%;
+  padding: 0 1rem;
+  margin: 0 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.section-heading {
+  font-size: 3rem;
+  color: var(--primary);
+  padding: 2rem 0;
+}
+
+#tranding {
+  padding: 4rem 0;
+}
+
+@media (max-width:1440px) {
+  #tranding {
+    padding: 7rem 0;
+  }
+}
+
+#tranding .tranding-slider {
+  height: 30rem;
+  /* Adjusted height */
+  padding: 2rem 0;
+  position: relative;
+}
+
+@media (max-width:500px) {
+  #tranding .tranding-slider {
+    height: 22.5rem;
+    /* Adjusted height */
+  }
+}
+
+/* Cambié el tamaño del contenedor de la imagen */
+.tranding-slide {
+  width: 18.5rem;
+  /* Half of original width */
+  height: 21rem;
+  /* Half of original height */
+  position: relative;
+  display: flex;
+  /* Centrar el contenido dentro del contenedor */
+  justify-content: center;
+  /* Centrar horizontalmente */
+  align-items: center;
+  /* Centrar verticalmente */
+}
+
+@media (max-width:500px) {
+  .tranding-slide {
+    width: 15rem !important;
+    /* Half of original width for small screens */
+    height: 8.5rem !important;
+    /* Half of original height for small screens */
+  }
+}
+
+/* Cambié el tamaño de la imagen */
+.tranding-slide .tranding-slide-img img {
+  width: 18.5rem;
+  /* Half of original width */
+  height: 21rem;
+  /* Half of original height */
+  border-radius: 2rem;
+  object-fit: cover;
+}
+
+.tranding-slide .tranding-slide-content {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* Ajusté las posiciones del precio y el contenido inferior */
+.tranding-slide-content .food-price {
+  position: absolute;
+  top: 1rem;
+  /* Ajustado */
+  right: 1rem;
+  /* Ajustado */
+  color: var(--white);
+}
+
+.tranding-slide-content .tranding-slide-content-bottom {
+  position: absolute;
+  bottom: 1rem;
+  /* Ajustado */
+  left: 1rem;
+  /* Ajustado */
+  color: var(--white);
+}
+
+/* Ajusté el espaciado del rating */
+.food-rating {
+  padding-top: 0.5rem;
+  /* Ajustado */
+  display: flex;
+  gap: 0.5rem;
+  /* Ajustado */
+}
+
+.rating ion-icon {
+  color: var(--primary);
+}
+
+.swiper-slide-shadow-left,
+.swiper-slide-shadow-right {
+  display: none;
+}
+
+.tranding-slider-control {
+  position: relative;
+  bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tranding-slider-control .swiper-button-next {
+  left: 58% !important;
+  transform: translateX(-58%) !important;
+}
+
+@media (max-width:990px) {
+  .tranding-slider-control .swiper-button-next {
+    left: 70% !important;
+    transform: translateX(-70%) !important;
+  }
+}
+
+@media (max-width:450px) {
+  .tranding-slider-control .swiper-button-next {
+    left: 80% !important;
+    transform: translateX(-80%) !important;
+  }
+}
+
+@media (max-width:990px) {
+  .tranding-slider-control .swiper-button-prev {
+    left: 30% !important;
+    transform: translateX(-30%) !important;
+  }
+}
+
+@media (max-width:450px) {
+  .tranding-slider-control .swiper-button-prev {
+    left: 20% !important;
+    transform: translateX(-20%) !important;
+  }
+}
+
+.tranding-slider-control .slider-arrow {
+  background: var(--white);
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  left: 42%;
+  transform: translateX(-42%);
+  filter: drop-shadow(0px 8px 24px rgba(18, 28, 53, 0.1));
+}
+
+.tranding-slider-control .slider-arrow ion-icon {
+  font-size: 2rem;
+  color: #222224;
+}
+
+.tranding-slider-control .slider-arrow::after {
+  content: '';
+}
+
+.tranding-slider-control .swiper-pagination {
+  position: relative;
+  width: 15rem;
+  bottom: 1rem;
+}
+
+.tranding-slider-control .swiper-pagination .swiper-pagination-bullet {
+  filter: drop-shadow(0px 8px 24px rgba(18, 28, 53, 0.1));
+}
+
+.tranding-slider-control .swiper-pagination .swiper-pagination-bullet-active {
+  background: var(--primary);
+}
+
+/* Estilos para el contenido del main */
+#home,
+#products,
+#contact,
+#cart {
+  font-size: 0.8rem;
+  /* Reducir tamaño de letra un 20% */
+}
+
+
+#home h2,
+#products h2,
+#contact h2 {
+  font-size: 1.6rem;
+  /* Tamaño de encabezados al 80% del original */
+}
+
+#tranding {
+  padding: 4rem 0;
+}
+
+@media (max-width:1440px) {
+  #tranding {
+    padding: 7rem 0;
+  }
+}
+
+#tranding .tranding-slider {
+  height: 30rem;
+  /* Adjusted height */
+  padding: 2rem 0;
+  position: relative;
+}
+
+@media (max-width:500px) {
+  #tranding .tranding-slider {
+    height: 22.5rem;
+    /* Adjusted height */
+  }
+}
+
+/* Cambié el tamaño del contenedor de la imagen */
+.tranding-slide {
+  width: 18.5rem;
+  /* Half of original width */
+  height: 21rem;
+  /* Half of original height */
+  position: relative;
+  display: flex;
+  /* Centrar el contenido dentro del contenedor */
+  justify-content: center;
+  /* Centrar horizontalmente */
+  align-items: center;
+  /* Centrar verticalmente */
+}
+
+@media (max-width:500px) {
+  .tranding-slide {
+    width: 15rem !important;
+    /* Half of original width for small screens */
+    height: 8.5rem !important;
+    /* Half of original height for small screens */
+  }
+}
+
+/* Cambié el tamaño de la imagen */
+.tranding-slide .tranding-slide-img img {
+  width: 18.5rem;
+  /* Half of original width */
+  height: 21rem;
+  /* Half of original height */
+  border-radius: 2rem;
+  object-fit: cover;
+}
+
+.tranding-slide .tranding-slide-content {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* Ajusté las posiciones del precio y el contenido inferior */
+.tranding-slide-content .food-price {
+  position: absolute;
+  top: 1rem;
+  /* Ajustado */
+  right: 1rem;
+  /* Ajustado */
+  color: var(--white);
+}
+
+.tranding-slide-content .tranding-slide-content-bottom {
+  position: absolute;
+  bottom: 1rem;
+  /* Ajustado */
+  left: 1rem;
+  /* Ajustado */
+  color: var(--white);
+}
+
+/* Ajusté el espaciado del rating */
+.food-rating {
+  padding-top: 0.5rem;
+  /* Ajustado */
+  display: flex;
+  gap: 0.5rem;
+  /* Ajustado */
+}
+
+.rating ion-icon {
+  color: var(--primary);
+}
+
+.swiper-slide-shadow-left,
+.swiper-slide-shadow-right {
+  display: none;
+}
+
+.tranding-slider-control {
+  position: relative;
+  bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tranding-slider-control .swiper-button-next {
+  left: 58% !important;
+  transform: translateX(-58%) !important;
+}
+
+@media (max-width:990px) {
+  .tranding-slider-control .swiper-button-next {
+    left: 70% !important;
+    transform: translateX(-70%) !important;
+  }
+}
+
+@media (max-width:450px) {
+  .tranding-slider-control .swiper-button-next {
+    left: 80% !important;
+    transform: translateX(-80%) !important;
+  }
+}
+
+@media (max-width:990px) {
+  .tranding-slider-control .swiper-button-prev {
+    left: 30% !important;
+    transform: translateX(-30%) !important;
+  }
+}
+
+@media (max-width:450px) {
+  .tranding-slider-control .swiper-button-prev {
+    left: 20% !important;
+    transform: translateX(-20%) !important;
+  }
+}
+
+.tranding-slider-control .slider-arrow {
+  background: var(--white);
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  left: 42%;
+  transform: translateX(-42%);
+  filter: drop-shadow(0px 8px 24px rgba(18, 28, 53, 0.1));
+}
+
+.tranding-slider-control .slider-arrow ion-icon {
+  font-size: 2rem;
+  color: #222224;
+}
+
+.tranding-slider-control .slider-arrow::after {
+  content: '';
+}
+
+.tranding-slider-control .swiper-pagination {
+  position: relative;
+  width: 15rem;
+  bottom: 1rem;
+}
+
+.tranding-slider-control .swiper-pagination .swiper-pagination-bullet {
+  filter: drop-shadow(0px 8px 24px rgba(18, 28, 53, 0.1));
+}
+
+.tranding-slider-control .swiper-pagination .swiper-pagination-bullet-active {
+  background: var(--primary);
+}
+
+.card-img-top {
+  width: 133px;
+  height: 166px;
+  object-fit: cover;
+  /* Ajusta cómo se ajusta la imagen dentro del contenedor */
+  border-radius: 8px;
+  /* Opcional: bordes redondeados */
+}
+
+#productImage {
+  width: 500px;
+  /* Ancho fijo de 560px */
+  height: 300px;
+  /* Altura fija de 446px */
+  object-fit: contain;
+  /* Para ajustar la imagen dentro del tamaño fijo especificado */
+  display: block;
+  /* Para eliminar espacio adicional debajo de las imágenes */
+  margin: 0 auto;
+  /* Centrar horizontalmente */
+}
+
+.card-body .d-flex {
+  display: flex;
+  align-items: center;
+}
+
+.card-body .card-text {
+  margin-right: 10px;
+  font-size: 1.3rem;
+}
+
+.size-selector {
+  width: 50%;
+  /* Ajusta este valor según sea necesario */
+}
+

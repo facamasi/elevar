@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda de Camisetas</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+
+  <!-- Tu CSS personalizado -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="bg-dark">
+    <div class="container">
+      <h1 class="text-light">Tienda de Camisetas</h1>
+      <nav>
+        <ul class="nav">
+          <li class="nav-item"><a class="nav-link text-light" href="#home">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link text-light" href="#products">Productos</a></li>
+          <li class="nav-item"><a class="nav-link text-light" href="#cart">Carrito</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container-fluid">
+    <br>
+    <section id="tranding" class="py-5">
+      <div class="container">
+        <div class="swiper tranding-slider">
+          <div class="swiper-wrapper">
+
+            <!-- Slide 1 -->
+            <div class="swiper-slide tranding-slide">
+              <div class="tranding-slide-img">
+                <img src="images/Bunny.png" alt="Tranding">
+              </div>
+              <div class="tranding-slide-content">
+                <h1 class="food-price">$70</h1>
+                <div class="tranding-slide-content-bottom">
+                  <h2 class="food-name">
+                    Psycho Bunny
+                  </h2>
+                  <h3 class="food-rating">
+                    <span>4.5</span>
+                    <div class="rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+                  </h3>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="swiper-slide tranding-slide">
+              <div class="tranding-slide-img">
+                <img src="images/Goku.png" alt="Tranding">
+              </div>
+              <div class="tranding-slide-content">
+                <h1 class="food-price">$70</h1>
+                <div class="tranding-slide-content-bottom">
+                  <h2 class="food-name">
+                    Kamehameha
+                  </h2>
+                  <h3 class="food-rating">
+                    <span>4.5</span>
+                    <div class="rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="swiper-slide tranding-slide">
+              <div class="tranding-slide-img">
+                <img src="images/Vegeta.png" alt="Tranding">
+              </div>
+              <div class="tranding-slide-content">
+                <h1 class="food-price">$70</h1>
+                <div class="tranding-slide-content-bottom">
+                  <h2 class="food-name">
+                    Galick Ho
+                  </h2>
+                  <h3 class="food-rating">
+                    <span>4.5</span>
+                    <div class="rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <!-- Slide 4 -->
+            <div class="swiper-slide tranding-slide">
+              <div class="tranding-slide-img">
+                <img src="images/picolo.png" alt="Tranding">
+              </div>
+              <div class="tranding-slide-content">
+                <h1 class="food-price">$70</h1>
+                <div class="tranding-slide-content-bottom">
+                  <h2 class="food-name">
+                    Makankosappo
+                  </h2>
+                  <h3 class="food-rating">
+                    <span>4.5</span>
+                    <div class="rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <!-- Más slides pueden ser añadidos según sea necesario -->
+
+          </div>
+
+          <!-- Controles del Slider -->
+          <div class="tranding-slider-control">
+            <div class="swiper-button-prev slider-arrow">
+              <ion-icon name="arrow-back-outline"></ion-icon>
+            </div>
+            <div class="swiper-button-next slider-arrow">
+              <ion-icon name="arrow-forward-outline"></ion-icon>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="row">
+
+      <div class="col-md-8">
+
+        <!-- Contenido de col-md-8 -->
+        <section id="products" class="py-5 bg-light">
+          <div class="container">
+            <h2 class="text-center">Camisetas</h2>
+            <div class="row justify-content-center">
+
+              <!-- Producto1 -->
+               
+              <div class="col-6 col-md-3 mt-5 text-center Products">
+                <div class="card">
+                  <a
+                    href="detalles.html?name=Psycho%20Bunny&price=70000&description=Camiseta%20exclusiva%20con%20dise%C3%B1o%20de%20Psycho%20Bunny:%20%C2%A1Escan%C3%A9a%20el%20c%C3%B3digo%20QR,%20descubre%20la%20tuya%20y%20ll%C3%A9vala!&image=images/Bunny.png&qr=images/PsychoBunny.png">
+                    <img src="images/Bunny.png" class="card-img-top" alt="Camiseta 1">
+                  </a>
+                  <div class="card-body">
+                    <a
+                      href="detalles.html?name=Psycho%20Bunny&price=70000&description=Camiseta%20exclusiva%20con%20dise%C3%B1o%20de%20Psycho%20Bunny:%20%C2%A1Escan%C3%A9a%20el%20c%C3%B3digo%20QR,%20descubre%20la%20tuya%20y%20ll%C3%A9vala!&image=images/Bunny.png&qr=images/PsychoBunny.png">
+                      <h4 class="card-title">Psycho Bunny</h4>
+                    </a>
+                    <div class="d-flex align-items-center justify-content-between">
+                      <p class="card-text mb-0">$70.000</p>
+                      <select id="size-Psycho-Bunny" class="form-control size-selector" data-name="Psycho Bunny">
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                      </select>
+                    </div>
+                    <br>
+                    <button class="btn btn-primary addToCartBtn" data-name="Psycho Bunny" data-price="70000"
+                      data-description="Camiseta exclusiva con diseño de Psycho Bunny: ¡Escanéa el código QR, descubre la tuya!"
+                      data-image="images/Bunny.png">Añadir al Carrito</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Producto 2 -->
+              <div class="col-6 col-md-3 mt-5 text-center Products">
+                <div class="card">
+                  <a
+                    href="detalles.html?name=Mockingbird&price=70000&description=Camiseta%20con%20dise%C3%B1o%20de%20Mockingbird:%20¡Escanéa%20el%20código%20QR,%20descubre%20la%20tuya!&image=images/mockingbird.png&qr=images/Mockinbird.png">
+                    <img src="images/mockingbird.png" class="card-img-top" alt="Camiseta 5">
+                  </a>
+                  <div class="card-body">
+                    <a
+                      href="detalles.html?name=Mockingbird&price=70000&description=Camiseta%20con%20dise%C3%B1o%20de%20Mockingbird:%20¡Escanéa%20el%20código%20QR,%20descubre%20la%20tuya!&image=images/mockingbird.png&qr=images/Mockinbird.png">
+                      <h4 class="card-title">Mockingbird</h4>
+                    </a>
+                    <div class="d-flex align-items-center justify-content-between">
+                      <p class="card-text mb-0">$70.000</p>
+                      <select id="size-Mockingbird" class="form-control size-selector" data-name="Mockingbird">
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                      </select>
+                    </div>
+                    <br>
+                    <button class="btn btn-primary addToCartBtn" data-name="Mockingbird" data-price="70000"
+                      data-description="Camiseta con diseño de Mockingbird: ¡Escanéa el código QR, descubre la tuya!"
+                      data-image="images/mockingbird.png">Añadir al Carrito</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Producto 3 -->
+              <div class="col-6 col-md-3 mt-5 text-center Products">
+                <div class="card">
+                  <a
+                    href="detalles.html?name=Galaxias&price=70000&description=Camiseta%20con%20dise%C3%B1o%20de%20Galaxias&image=images/galaxias.png&qr=images/galaxias-qr.png">
+                    <img src="images/galaxias.png" class="card-img-top" alt="Camiseta 6">
+                  </a>
+                  <div class="card-body">
+                    <a
+                      href="detalles.html?name=Galaxias&price=70000&description=Camiseta%20con%20dise%C3%B1o%20de%20Galaxias&image=images/galaxias.png&qr=images/galaxias-qr.png">
+                      <h4 class="card-title">Galaxias</h4>
+                    </a>
+                    <div class="d-flex align-items-center justify-content-between">
+                      <p class="card-text mb-0">$70.000</p>
+                      <select id="size-Galaxias" class="form-control size-selector" data-name="Galaxias">
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                      </select>
+                    </div>
+                    <br>
+                    <button class="btn btn-primary addToCartBtn" data-name="Galaxias" data-price="70000"
+                      data-description="Camiseta con diseño de Galaxias: ¡Escanéa el código QR, descubre la tuya!"
+                      data-image="images/galaxias.png">Añadir al Carrito</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Producto 4 -->
+              <div class="col-6 col-md-3 mt-5 text-center Products">
+                <div class="card">
+                  <a
+                    href="detalles.html?name=Dino&price=70000&description=Camiseta%20con%20dise%C3%B1o%20de%Dino&image=images/dino.png&qr=images/dino-qr.png">
+                    <img src="images/dino.png" class="card-img-top" alt="Camiseta 7">
+                  </a>
+                  <div class="card-body">
+                    <a
+                      href="detalles.html?name=Dino&price=70000&description=Camiseta%20con%20dise%C3%B1o%20de%Dino&image=images/dino.png&qr=images/dino-qr.png">
+                      <h4 class="card-title">Dino</h4>
+                    </a>
+                    <div class="d-flex align-items-center justify-content-between">
+                      <p class="card-text mb-0">$70.000</p>
+                      <select id="size-Dino" class="form-control size-selector" data-name="Dino">
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                      </select>
+                    </div>
+                    <br>
+                    <button class="btn btn-primary addToCartBtn" data-name="Dino" data-price="70000"
+                      data-description="Camiseta con diseño de Dino: ¡Escanéa el código QR, descubre la tuya!"
+                      data-image="images/dino.png">Añadir al Carrito</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Producto 5 -->
+              <div class="col-6 col-md-3 mt-5 text-center Products">
+                <div class="card">
+                  <a
+                    href="detalles.html?name=Kamehameha&price=70000&description=Camiseta%20con%20dise%C3%B1o%20de%20Kamehameha&image=images/Goku.png&qr=images/Goku-qr.png">
+                    <img src="images/Goku.png" class="card-img-top" alt="Camiseta 2">
+                  </a>
+                  <div class="card-body">
+                    <a
+                      href="detalles.html?name=Kamehameha&price=70000&description=Camiseta%20con%20dise%C3%B1o%20de%20Kamehameha&image=images/Goku.png&qr=images/Goku-qr.png">
+                      <h4 class="card-title">Kamehameha</h4>
+                    </a>
+                    <div class="d-flex align-items-center justify-content-between">
+                      <p class="card-text mb-0">$70.000</p>
+                      <select id="size-Kamehameha" class="form-control size-selector" data-name="Kamehameha">
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                      </select>
+                    </div>
+                    <br>
+                    <button class="btn btn-primary addToCartBtn" data-name="Kamehameha" data-price="70000"
+                      data-description="Camiseta exclusiva con diseño de Kamehameha: ¡Escanéa el código QR, descubre la tuya!"
+                      data-image="images/Goku.png">Añadir al Carrito</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Producto 6 -->
+              <div class="col-6 col-md-3 mt-5 text-center Products">
+                <div class="card">
+                  <a
+                    href="detalles.html?name=Galick%20Ho&price=70000&description=Camiseta%20con%20dise%C3%B1o%20de%20Galick%20Ho&image=images/Vegeta.png&qr=images/Vegeta-qr.png">
+                    <img src="images/Vegeta.png" class="card-img-top" alt="Camiseta 3">
+                  </a>
+                  <div class="card-body">
+                    <a
+                      href="detalles.html?name=Galick%20Ho&price=70000&description=Camiseta%20con%20dise%C3%B1o%20de%20Galick%20Ho&image=images/Vegeta.png&qr=images/Vegeta-qr.png">
+                      <h4 class="card-title">Galick Ho</h4>
+                    </a>
+                    <div class="d-flex align-items-center justify-content-between">
+                      <p class="card-text mb-0">$70.000</p>
+                      <select id="size-Galick-Ho" class="form-control size-selector" data-name="Galick Ho">
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                      </select>
+                    </div>
+                    <br>
+                    <button class="btn btn-primary addToCartBtn" data-name="Galick Ho" data-price="70000"
+                      data-description="Camiseta con diseño de Galick Ho: ¡Escanéa el código QR, descubre la tuya!"
+                      data-image="images/Vegeta.png">Añadir al Carrito</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Producto 7 -->
+              <div class="col-6 col-md-3 mt-5 text-center Products">
+                <div class="card">
+                  <a
+                    href="detalles.html?name=Makankosappo&price=70000&description=Camiseta%20con%20dise%C3%B1o%20de%20Makankosappo&image=images/picolo.png&qr=images/picolo-qr.png">
+                    <img src="images/picolo.png" class="card-img-top" alt="Camiseta 4">
+                  </a>
+                  <div class="card-body">
+                    <a
+                      href="detalles.html?name=Makankosappo&price=70000&description=Camiseta%20con%20dise%C3%B1o%20de%20Makankosappo&image=images/picolo.png&qr=images/picolo-qr.png">
+                      <h4 class="card-title">Makankosappo</h4>
+                    </a>
+                    <div class="d-flex align-items-center justify-content-between">
+                      <p class="card-text mb-0">$70.000</p>
+                      <select id="size-Makankosappo" class="form-control size-selector" data-name="Makankosappo">
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                      </select>
+                    </div>
+                    <br>
+                    <button class="btn btn-primary addToCartBtn" data-name="Makankosappo" data-price="70000"
+                      data-description="Camiseta con diseño de Makankosappo: ¡Escanéa el código QR, descubre la tuya!"
+                      data-image="images/picolo.png">Añadir al Carrito</button>
+                  </div>
+                </div>
+              </div>
+
+
+              <!-- Más productos pueden añadirse según sea necesario -->
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="col-md-4">
+        <!-- Contenido de col-md-4 -->
+        <section id="cart" class="py-5 bg-light">
+          <div id="cartItems">
+            <h3>Productos en el Carrito</h3>
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Subtotal</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td colspan="3" class="text-right"><strong>Total:</strong></td>
+                    <td colspan="2"><strong>$0.00</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- Botón de Reiniciar Carrito -->
+          <button id="resetCartBtn" class="btn btn-danger btn-block mt-3 d-none" onclick="resetCart()">Reiniciar
+            Carrito</button>
+          <br>
+
+
+          <button type="button" class="btn btn-success" data-toggle="button" aria-pressed="false" autocomplete="off"
+            onclick="sendCartViaWhatsApp()">
+            Enviar por WhatsApp</button>
+
+        </section>
+      </div>
+
+
+
+  </main>
+
+  <!-- Ionicons -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+  <!-- Tus scripts personalizados -->
+  <script src="script.js"></script>
+
+  <script>
+    // Variable global para almacenar el carrito de compras
+    let cart = [];
+
+    // Función para inicializar el Slider con Swiper
+    var TrandingSlider = new Swiper('.tranding-slider', {
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      loop: true,
+      slidesPerView: 'auto',
+      coverflowEffect: {
+        rotate: 0,
+        stretch: 0,
+        depth: 100,
+        modifier: 2.5,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      }
+    });
+
+    // Función para añadir productos al carrito
+    function addToCart(productName, productPrice, productDescription, productImage, productSize) {
+      const existingItem = cart.find(item => item.name === productName && item.size === productSize);
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        const product = {
+          name: productName,
+          price: productPrice,
+          description: productDescription,
+          image: productImage,
+          quantity: 1,
+          size: productSize
+        };
+        cart.push(product);
+      }
+      saveCart(); // Guardar el carrito en localStorage
+      displayCart(); // Mostrar el carrito actualizado en la página
+      alert(`Se añadió "${productName}" (${productSize}) al carrito.`);
+    }
+
+    // Función para mostrar el carrito en la página
+    function displayCart() {
+      const cartItems = document.querySelector('#cartItems tbody');
+      if (!cartItems) return; // Si no existe el elemento, salir de la función
+
+      cartItems.innerHTML = cart.map((product, index) => `
+    <tr>
+      <td>
+        <img src="${product.image}" alt="${product.name}" class="img-fluid" style="max-width: 50px;">
+        ${product.name} (${product.size}) <!-- Mostrar el nombre y la talla del producto -->
+      </td>
+      <td>${product.price ? '$' + product.price.toFixed(2) : ''}</td>
+      <td>
+        <input type="number" value="${product.quantity}" min="1" class="form-control" style="width: 70px;" onchange="updateQuantity(${index}, this.value)">
+      </td>
+      <td>${product.price ? '$' + (product.price * product.quantity).toFixed(2) : ''}</td>
+      <td>
+        <button class="btn btn-danger btn-sm" onclick="removeFromCart(${index})">Eliminar</button>
+      </td>
+    </tr>
+  `).join('') + `
+    <tr>
+      <td colspan="3" class="text-right"><strong>Total:</strong></td>
+      <td colspan="2"><strong>$${calculateTotal().toFixed(2)}</strong></td>
+    </tr>
+  `;
+
+      const resetCartBtn = document.querySelector('#resetCartBtn');
+      if (resetCartBtn) {
+        resetCartBtn.classList.toggle('d-none', cart.length === 0);
+      }
+    }
+
+    // Función para actualizar la cantidad de un producto en el carrito
+    function updateQuantity(index, quantity) {
+      if (quantity < 1) {
+        removeFromCart(index); // Eliminar producto si la cantidad es menor que 1
+      } else {
+        cart[index].quantity = parseInt(quantity);
+        saveCart(); // Guardar el carrito en localStorage
+        displayCart(); // Actualizar la visualización del carrito
+      }
+    }
+
+    // Función para eliminar un producto del carrito
+    function removeFromCart(index) {
+      cart.splice(index, 1); // Eliminar producto del arreglo cart
+      saveCart(); // Guardar el carrito en localStorage
+      displayCart(); // Actualizar la visualización del carrito
+    }
+
+    // Función para calcular el total del carrito
+    function calculateTotal() {
+      return cart.reduce((total, product) => total + (product.price * product.quantity), 0);
+    }
+
+    // Función para reiniciar el carrito
+    function resetCart() {
+      cart = []; // Vaciar el arreglo cart
+      saveCart(); // Guardar el carrito vacío en localStorage
+      displayCart(); // Actualizar la visualización del carrito
+    }
+
+    // Función para guardar el carrito en localStorage
+    function saveCart() {
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
+    // Función para cargar el carrito desde localStorage al cargar la página
+    function loadCart() {
+      const cartFromStorage = localStorage.getItem('cart');
+      if (cartFromStorage) {
+        cart = JSON.parse(cartFromStorage); // Cargar el carrito desde localStorage
+        displayCart(); // Mostrar el carrito en la página
+      }
+    }
+
+    // Evento de carga del DOM
+    document.addEventListener('DOMContentLoaded', function () {
+      loadCart(); // Cargar el carrito desde localStorage al cargar la página
+
+      const productsContainer = document.getElementById('products');
+      if (productsContainer) {
+        // Event listener para añadir productos al carrito en index.html
+        productsContainer.addEventListener('click', function (event) {
+          if (event.target && event.target.classList.contains('addToCartBtn')) {
+            const productName = event.target.dataset.name;
+            const productPrice = parseFloat(event.target.dataset.price);
+            const productDescription = event.target.dataset.description;
+            const productImage = event.target.dataset.image;
+            const sizeSelector = event.target.parentElement.querySelector('.size-selector');
+            const productSize = sizeSelector ? sizeSelector.value : 'M'; // Obtener la talla seleccionada
+
+            addToCart(productName, productPrice, productDescription, productImage, productSize); // Llamar a addToCart con los datos del producto y la talla
+          }
+        });
+      }
+
+      const resetCartBtn = document.getElementById('resetCartBtn');
+      if (resetCartBtn) {
+        // Event listener para reiniciar el carrito en index.html
+        resetCartBtn.addEventListener('click', function () {
+          resetCart(); // Llamar a resetCart al hacer clic en el botón "Reiniciar Carrito"
+        });
+      }
+
+      // Mostrar el carrito en detalles.html
+      displayCart();
+    });
+
+    //ENVIAR POR WHATSAPP
+
+    // Función para enviar el carrito por WhatsApp
+    function sendCartViaWhatsApp() {
+      const total = calculateTotal().toFixed(2);
+      const message = `¡Hola! Aquí tienes mi lista de compras:\n\n${formatCartForWhatsApp()}\nTotal: $${total}\n\n¡Gracias!`;
+
+      // Crear un elemento temporal de textarea para copiar el mensaje al portapapeles
+      const tempTextArea = document.createElement('textarea');
+      tempTextArea.value = message;
+      tempTextArea.style.position = 'fixed';  // Evitar que se desplace la página
+      tempTextArea.style.opacity = 0;         // Hacer invisible el textarea
+      document.body.appendChild(tempTextArea);
+      tempTextArea.select();
+      document.execCommand('copy');            // Copiar el contenido al portapapeles
+      document.body.removeChild(tempTextArea); // Eliminar el textarea temporal
+
+      // Alerta después de copiar al portapapeles
+      alert(`¡MENSAJE COPIADO AL PORTAPAPELES! Por favor, si el pedido no carga en el chat, pega este mensaje:\n\n${message}`);
+
+      // Reemplaza '1234567890' con el número de WhatsApp al que deseas enviar el mensaje
+      const phoneNumber = '573155540282';
+      const url = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
+
+      // Abrir en una nueva ventana o redireccionar a la URL de WhatsApp
+      window.open(url, '_blank');
+      resetCart();
+    }
+
+    // Función para formatear el carrito para WhatsApp
+    function formatCartForWhatsApp() {
+      return cart.map(product => `${product.name} (${product.size}): ${product.quantity} x $${(product.price * product.quantity).toFixed(2)}`).join('\n');
+    }
+  </script>
+
+</body>
+
+</html>
